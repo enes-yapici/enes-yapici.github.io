@@ -1,0 +1,466 @@
+h2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center; /* Ortalanmış görünüm istiyorsan */
+}
+
+/* Navbar */
+nav {
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 1rem 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #007acc;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #005f99;
+}
+
+#home {
+  min-height: 100vh;           /* Tüm ekran boyu kadar alan kaplasın */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;     /* Dikey ortala */
+  align-items: center;         /* Yatay ortala */
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Genel Section Stili */
+section {
+  padding: 3rem 2rem;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* Typewriter Efekti */
+.typewriter {
+  max-width:32ch ;
+  overflow: hidden;
+  border-right: 0.15em solid #007acc;
+  white-space: nowrap;
+  margin: 0 auto;
+  font-size: 2rem;
+  font-weight: 600;
+  width: 0;
+  animation: typing 6s steps(50, end) infinite,
+             blink-caret 0.75s step-end infinite;
+  animation-direction: normal; /* alternatesiz */
+  animation-fill-mode: none;   /* önceki değer kalmasın */
+}
+
+@keyframes typing {
+  0% {width: 0;}
+  60% {width: 100%;}
+  85% {width: 100%;}
+  100% {width: 0;}
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #007acc }
+}
+
+/* Sosyal Medya İkonları */
+.social-icons {
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  text-decoration: none;
+  font-size: 2.5rem;
+  margin: 0 1rem;
+  color: #007acc;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #005f99;
+}
+
+/* Proje Kartı */
+.project-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 300px;         /* Kart genişliği */
+  flex: 0 1 auto;       /* Flex ayarı: kartlar büyüyüp küçülebilir */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-card a {
+  color: white;
+  background: #007acc;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.project-card a:hover {
+  background: #005f99;
+  background-color: #005f99;
+  transform: scale(1.05);
+}
+
+.project-cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;     /* Genişlik yetmezse alta geçsin */
+  gap: 2rem;           /* Kartlar arası boşluk */
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.project-image {
+  width: 100%;         /* Container genişliği kadar */
+  height: auto;        /* Oranı koruyarak yükseklik ayarı */
+  max-height: 180px;   /* Gerekirse sınırla (isteğe bağlı) */
+  object-fit: cover;   /* Görsel taşarsa kırp */
+  border-radius: 12px; /* Kenarları yuvarlat (isteğe bağlı) */
+  margin-bottom: 12px; /* Alttan boşluk */
+}
+
+.project-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.4rem;
+  background-color: #007acc;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.project-button i {
+  margin-right: 0.5rem;
+}
+
+.project-button:hover {
+  background-color: #005f99;
+  transform: scale(1.05);
+}
+
+.project-button.center {
+  padding: 0.5rem 1.8rem;
+  background: transparent;
+  color: #007acc;
+  border: 1px solid #007acc;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-align: center;
+}
+
+.project-button.center:hover {
+  background-color: white;
+  color: #0b0c1a;
+}
+
+
+/* Zigzag Timeline */
+.zigzag-timeline {
+  position: relative;
+  margin: 3rem auto;
+  max-width: 900px;
+  padding: 0 1rem;
+}
+
+.zigzag-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #007acc;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  width: 75%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item.left {
+  left: -25%;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-item.visible.delay-0 { transition-delay: 0s; }
+.timeline-item.visible.delay-1 { transition-delay: 0.2s; }
+.timeline-item.visible.delay-2 { transition-delay: 0.4s; }
+.timeline-item.visible.delay-3 { transition-delay: 0.6s; }
+.timeline-item.visible.delay-4 { transition-delay: 0.8s; }
+.timeline-item.visible.delay-5 { transition-delay: 0.8s; }
+.timeline-item.visible.delay-6 { transition-delay: 0.8s; }
+.timeline-item.visible.delay-7 { transition-delay: 0.8s; }
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 1.2rem;
+  width: 16px;
+  height: 16px;
+  background: #007acc;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-item.left::before {
+  right: -8px;
+}
+
+.timeline-item.right::before {
+  left: -8px;
+}
+
+.timeline-item .content {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.timeline-item .content h3 {
+  margin-top: 0;
+  color: #007acc;
+}
+
+.timeline-item .content h4 {
+  margin-top: 0;
+  color: #015994;
+}
+
+.timeline-item .content h5 {
+  color: #015994
+}
+
+.timeline-item .content li {
+  text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    width: 100%;
+    left: 0 !important;
+    text-align: left;
+    padding-left: 3rem;
+  }
+
+  .zigzag-timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item::before {
+    left: 12px !important;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #ddd;
+}
+
+footer a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+/* Skill İkonları */
+.skill-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 70px;
+}
+
+.skill {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.skill:hover {
+  transform: scale(1.1);
+}
+
+.skill i {
+  width: 45px;
+  height: 45px;
+  font-size: 3rem;
+  color: #007acc;
+}
+
+.skill img.icon {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  margin-bottom: 5px;
+  filter: grayscale(100%) brightness(0%);
+  filter: invert(37%) sepia(78%) saturate(4103%) hue-rotate(185deg) brightness(90%) contrast(101%);
+}
+
+/* Progress Bars */
+#skill-bars {
+  margin-top: 2rem;
+}
+
+.progress-wrapper {
+  display: none;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.progress-bar {
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background-color: #007acc;
+  height: 100%;
+  width: 0;
+  border-radius: 20px;
+  animation: fillBar 1.5s forwards;
+}
+
+@keyframes fillBar {
+  from { width: 0 }
+  to { width: var(--value) }
+}
+
+
+
+/* Contact form */
+
+.contact-photo {
+  width: 170px;          /* Daha önce 120px'ti, küçültüldü */
+  height: 170px;         /* Oranlı küçültme */
+  object-fit: cover;    /* Fotoğrafı kırpmadan düzgünce sığdırır */
+  border-radius: 20%;   /* Yuvarlak hale getirir */
+  margin-bottom: 0.2rem; 
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;  /* Alt alta yerleşim */
+  gap: 1.2rem;              /* Kutular arası boşluk */
+  min-width: 300px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+
+/* Contact form fields layout */
+.contact-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-form button {
+  padding: 0.8rem 2rem;
+  background: transparent;
+  color: #007acc;
+  border: 1px solid #007acc;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: white;
+  color: #0b0c1a;
+}
+
+
+
+/* Scroll to Top Butonu */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  font-size: 1.5rem;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s;
+}
+
+#scrollTopBtn:hover {
+  background-color: #005f99;
+}
